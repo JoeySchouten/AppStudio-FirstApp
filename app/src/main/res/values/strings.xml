@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">FirstApp (DiceRoller)</string>
+    <string name="prompt_string">Press a button to roll a die and see the result!</string>
+    <string name="die_result"></string>
+</resources>
