@@ -11,7 +11,7 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button d4button;
+    private ImageButton d4button;
     private ImageButton d6button;
     private Button d8button;
     private Button d10button;
@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        d4button = (Button) findViewById(R.id.d4button);
+        d4button = (ImageButton) findViewById(R.id.d4button);
         d6button = (ImageButton) findViewById(R.id.d6button);
         d8button = (Button) findViewById(R.id.d8button);
         d10button = (Button) findViewById(R.id.d10button);

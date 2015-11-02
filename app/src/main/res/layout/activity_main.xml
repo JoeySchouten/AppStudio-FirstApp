@@ -28,10 +28,12 @@
         android:layout_height="wrap_content"
         android:gravity="center">
 
-        <Button
+        <ImageButton
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:text="d4"
+            android:src="@drawable/d4vector"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
             android:onClick="onD4Click"
             android:id="@+id/d4button" />
 
