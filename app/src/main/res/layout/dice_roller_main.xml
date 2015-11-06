@@ -7,20 +7,39 @@
     android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
     android:orientation="vertical"
     >
-
-    <TextView
-        android:text="@string/prompt_string"
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAlignment="center"/>
+        android:gravity="center">
 
-    <TextView
-        android:text="@string/die_result"
-        android:layout_width="match_parent"
+    <NumberPicker
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:id="@+id/die_result"
-        android:textSize="100sp" />
+        android:id="@+id/numberPicker" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <TextView
+                android:text="@string/prompt_string"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"/>
+
+            <TextView
+                android:text="@string/die_result"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:id="@+id/die_result"
+                android:textSize="100sp" />
+
+        </LinearLayout>
+    </LinearLayout>
 
     <LinearLayout
         android:orientation="horizontal"
@@ -28,32 +47,37 @@
         android:layout_height="wrap_content"
         android:gravity="center">
 
+
         <ImageButton
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="@dimen/sq_button_size"
+            android:layout_height="@dimen/sq_button_size"
             android:src="@drawable/d4vector"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"
+            android:layout_margin="@dimen/button_margin"
             android:onClick="onD4Click"
             android:id="@+id/d4button" />
 
         <ImageButton
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="@dimen/sq_button_size"
+            android:layout_height="@dimen/sq_button_size"
             android:src="@drawable/d6vector"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"
+            android:layout_margin="@dimen/button_margin"
             android:onClick="onD6Click"
             android:id="@+id/d6button"
             />
 
         <Button
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="@dimen/sq_button_size"
+            android:layout_height="@dimen/sq_button_size"
             android:text="d8"
+            android:layout_margin="@dimen/button_margin"
             android:onClick="onD8Click"
             android:id="@+id/d8button" />
     </LinearLayout>
+
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
@@ -61,25 +85,28 @@
         android:gravity="center">
 
         <Button
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="@dimen/sq_button_size"
+            android:layout_height="@dimen/sq_button_size"
             android:text="d10"
+            android:layout_margin="@dimen/button_margin"
             android:onClick="onD10Click"
             android:id="@+id/d10button" />
 
         <Button
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="@dimen/sq_button_size"
+            android:layout_height="@dimen/sq_button_size"
             android:text="d12"
+            android:layout_margin="@dimen/button_margin"
             android:onClick="onD12Click"
             android:id="@+id/d12button" />
 
         <ImageButton
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="@dimen/sq_button_size"
+            android:layout_height="@dimen/sq_button_size"
             android:src="@drawable/d20vector"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"
+            android:layout_margin="@dimen/button_margin"
             android:onClick="onD20Click"
             android:id="@+id/d20button" />
     </LinearLayout>
@@ -90,11 +117,20 @@
         android:gravity="center">
 
         <Button
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="@dimen/sq_button_size"
+            android:layout_height="@dimen/sq_button_size"
             android:text="d100"
+            android:layout_margin="@dimen/button_margin"
             android:onClick="onD100Click"
             android:id="@+id/d100button" />
+
+        <Button
+            android:layout_width="@dimen/sq_button_size"
+            android:layout_height="@dimen/sq_button_size"
+            android:text="AH/SR"
+            android:layout_margin="@dimen/button_margin"
+            android:onClick="onBoolD6Click"
+            android:id="@+id/boolD6button" />
     </LinearLayout>
 
 </LinearLayout>

@@ -5,9 +5,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.NumberPicker;
 import android.widget.TextView;
-
-import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,11 +18,13 @@ public class MainActivity extends AppCompatActivity {
     private ImageButton d20button;
     private Button d100button;
     private TextView die_result;
+    private NumberPicker numpick;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.dice_roller_main);
 
         d4button = (ImageButton) findViewById(R.id.d4button);
         d6button = (ImageButton) findViewById(R.id.d6button);
@@ -33,54 +34,42 @@ public class MainActivity extends AppCompatActivity {
         d20button = (ImageButton) findViewById(R.id.d20button);
         d100button = (Button) findViewById(R.id.d100button);
         die_result = (TextView) findViewById(R.id.die_result);
+        numpick = (NumberPicker) findViewById(R.id.numberPicker);
+        numpick.setMaxValue(120);
+        numpick.setMinValue(1);
+        numpick.setValue(1);
     }
 
     public void onD4Click(View view) {
-        // random number gen taken from:
-        // http://stackoverflow.com/questions/363681/generating-random-integers-in-a-range-with-java
-       String result = Integer.toString(1 + (int) (Math.random() * ((4 - 1) + 1)));
-        die_result.setText(result);
+        die_result.setText(Integer.toString(Dice.roll(numpick.getValue(),4)));
     }
 
     public void onD6Click(View view) {
-        // random number gen taken from:
-        // http://stackoverflow.com/questions/363681/generating-random-integers-in-a-range-with-java
-        String result = Integer.toString(1 + (int) (Math.random() * ((6 - 1) + 1)));
-        die_result.setText(result);
+        die_result.setText(Integer.toString(Dice.roll(numpick.getValue(), 6)));
     }
 
     public void onD8Click(View view) {
-        // random number gen taken from:
-        // http://stackoverflow.com/questions/363681/generating-random-integers-in-a-range-with-java
-        String result = Integer.toString(1 + (int) (Math.random() * ((8 - 1) + 1)));
-        die_result.setText(result);
+        die_result.setText(Integer.toString(Dice.roll(numpick.getValue(),8)));
     }
 
     public void onD10Click(View view) {
-        // random number gen taken from:
-        // http://stackoverflow.com/questions/363681/generating-random-integers-in-a-range-with-java
-        String result = Integer.toString(1 + (int) (Math.random() * ((10 - 1) + 1)));
-        die_result.setText(result);
+        die_result.setText(Integer.toString(Dice.roll(numpick.getValue(),10)));
     }
 
     public void onD12Click(View view) {
-        // random number gen taken from:
-        // http://stackoverflow.com/questions/363681/generating-random-integers-in-a-range-with-java
-        String result = Integer.toString(1 + (int) (Math.random() * ((12 - 1) + 1)));
-        die_result.setText(result);
+        die_result.setText(Integer.toString(Dice.roll(numpick.getValue(),12)));
     }
 
     public void onD20Click(View view) {
-        // random number gen taken from:
-        // http://stackoverflow.com/questions/363681/generating-random-integers-in-a-range-with-java
-        String result = Integer.toString(1 + (int) (Math.random() * ((20 - 1) + 1)));
-        die_result.setText(result);
+        die_result.setText(Integer.toString(Dice.roll(numpick.getValue(),20)));
     }
 
     public void onD100Click(View view) {
-        // random number gen taken from:
-        // http://stackoverflow.com/questions/363681/generating-random-integers-in-a-range-with-java
-        String result = Integer.toString(1 + (int) (Math.random() * ((100 - 1) + 1)));
-        die_result.setText(result);
+        die_result.setText(Integer.toString(Dice.roll(numpick.getValue(),100)));
     }
+
+    public void onBoolD6Click(View view) {
+        die_result.setText("Sx" + Integer.toString(Dice.boolDiceRoll(numpick.getValue())));
+    }
+
 }
