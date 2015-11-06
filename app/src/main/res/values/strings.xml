@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">FirstApp (DiceRoller)</string>
-    <string name="prompt_string">Press a button to roll a die and see the result!</string>
-    <string name="die_result"></string>
+    <string name="prompt_string">Press a button to roll a die and see the result! The wheel to the left determines the amount of dice to roll!</string>
+    <string name="die_result">0</string>
 </resources>
