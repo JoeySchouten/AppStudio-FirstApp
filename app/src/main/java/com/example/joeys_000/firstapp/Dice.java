@@ -1,5 +1,7 @@
 package com.example.joeys_000.firstapp;
 
+import android.widget.TextView;
+
 public class Dice {
     public static int roll(int amt, int size) {
         // random number gen taken from:
@@ -16,5 +18,10 @@ public class Dice {
             }
         }
         return success;
+    }
+
+    public static void addRoll(int amt, int size, TextView view) {
+        int value = Dice.roll(amt, size) + Integer.parseInt(view.getText().toString());
+        view.setText(Integer.toString(value));
     }
 }

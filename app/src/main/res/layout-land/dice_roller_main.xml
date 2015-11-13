@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
+    android:orientation="vertical"
+    >
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+
+    <NumberPicker
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/numberPicker"
+        android:layout_gravity="center_vertical|left"
+        android:descendantFocusability="blocksDescendants"/>
+
+
+            <TextView
+                android:text="@string/die_result"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:id="@+id/die_result"
+                android:textSize="100sp"
+                android:layout_gravity="center_vertical|left" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp">
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="3"
+                android:layout_margin="0dp">
+
+
+            <ImageButton
+                android:layout_width="@dimen/sq_button_size"
+                android:layout_height="@dimen/sq_button_size"
+                android:src="@drawable/d4vector"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:onClick="onD4Click"
+                android:id="@+id/d4button"
+                style="?android:attr/borderlessButtonStyle"/>
+
+            <ImageButton
+                android:layout_width="@dimen/sq_button_size"
+                android:layout_height="@dimen/sq_button_size"
+                android:src="@drawable/d6vector"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:onClick="onD6Click"
+                android:id="@+id/d6button"
+                style="?android:attr/borderlessButtonStyle"
+                />
+
+            <Button
+                android:layout_width="@dimen/sq_button_size"
+                android:layout_height="@dimen/sq_button_size"
+                android:text="d8"
+                android:onClick="onD8Click"
+                android:id="@+id/d8button"
+                />
+
+            <Button
+                android:layout_width="@dimen/sq_button_size"
+                android:layout_height="@dimen/sq_button_size"
+                android:text="d10"
+                android:onClick="onD10Click"
+                android:id="@+id/d10button" />
+
+            <Button
+                android:layout_width="@dimen/sq_button_size"
+                android:layout_height="@dimen/sq_button_size"
+                android:text="d12"
+                android:layout_margin="0dp"
+                android:onClick="onD12Click"
+                android:id="@+id/d12button" />
+
+            <ImageButton
+                android:layout_width="@dimen/sq_button_size"
+                android:layout_height="@dimen/sq_button_size"
+                android:src="@drawable/d20vector"
+                android:adjustViewBounds="true"
+                android:layout_margin="0dp"
+                android:scaleType="fitCenter"
+                android:onClick="onD20Click"
+                android:id="@+id/d20button" />
+
+
+            <Button
+                android:layout_width="@dimen/sq_button_size"
+                android:layout_height="@dimen/sq_button_size"
+                android:text="d100"
+                android:layout_margin="0dp"
+                android:onClick="onD100Click"
+                android:id="@+id/d100button" />
+
+            <Button
+                android:layout_width="@dimen/sq_button_size"
+                android:layout_height="@dimen/sq_button_size"
+                android:text="AH/SR"
+                android:layout_margin="0dp"
+                android:onClick="onBoolD6Click"
+                android:id="@+id/boolD6button" />
+
+        </GridLayout>
+    </LinearLayout>
+    </LinearLayout>
+
+
+
+</LinearLayout>
