@@ -1,5 +1,6 @@
 package com.example.joeys_000.firstapp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,13 +11,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ImageButton d4button;
-    private ImageButton d6button;
-    private Button d8button;
-    private Button d10button;
-    private Button d12button;
-    private ImageButton d20button;
-    private Button d100button;
+
     private TextView die_result;
     private NumberPicker numpick;
 
@@ -26,18 +21,29 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dice_roller_main);
 
-        d4button = (ImageButton) findViewById(R.id.d4button);
-        d6button = (ImageButton) findViewById(R.id.d6button);
-        d8button = (Button) findViewById(R.id.d8button);
-        d10button = (Button) findViewById(R.id.d10button);
-        d12button = (Button) findViewById(R.id.d12button);
-        d20button = (ImageButton) findViewById(R.id.d20button);
-        d100button = (Button) findViewById(R.id.d100button);
         die_result = (TextView) findViewById(R.id.die_result);
         numpick = (NumberPicker) findViewById(R.id.numberPicker);
         numpick.setMaxValue(120);
         numpick.setMinValue(1);
         numpick.setValue(1);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    //d8button.setBackground(getResources().getDrawable(R.drawable.button_dark));
+    public void onAddClick (View view) {
+        Intent goToAdditive = new Intent(this, AdditiveRoller.class);
+        String dres = String.valueOf(die_result.getText());
+        goToAdditive.putExtra("result", dres);
+        startActivityForResult(goToAdditive, 1);
     }
 
     public void onD4Click(View view) {
@@ -72,4 +78,12 @@ public class MainActivity extends AppCompatActivity {
         die_result.setText("Sx" + Integer.toString(Dice.boolDiceRoll(numpick.getValue())));
     }
 
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        String addResult = data.getStringExtra("result");
+        die_result.setText(addResult);
+    }
 }
