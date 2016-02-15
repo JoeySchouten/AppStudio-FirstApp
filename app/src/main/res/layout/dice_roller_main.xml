@@ -37,7 +37,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
-                android:id="@+id/die_result"
+                android:id="@+id/dieResultView"
                 android:textSize="100sp" />
 
         </LinearLayout>
